@@ -9,7 +9,16 @@ const initDb = (callback) => {
     console.log('Db is already initialized!');
     return callback(null, _db);
   }
-  MongoClient.connect(process.env.MONGODB_URI)
+
+  const uri = process.env.MONGODB_URI;
+  if (!uri) {
+    console.error('MONGODB_URI is not defined in .env file');
+    return callback(new Error('MONGODB_URI is not defined'));
+  }
+
+  console.log('Connecting to MongoDB with URI:', uri);
+
+  MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((client) => {
       _db = client;
       callback(null, _db);

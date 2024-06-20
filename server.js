@@ -1,12 +1,21 @@
-const express = require('express');
+const express = require("express");
+const dotenv = require('dotenv');
+dotenv.config();
+
+const mongodb = require("./data/connect");
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Hello World');
-});
+const port = process.env.PORT || 8080;
 
-const port = 8080;
+app.use(express.json());  // Ensure body parsing middleware is used
+app.use("/", require("./routes"));
 
-app.listen(process.env.PORT || port, () => {
-    console.log(`web server listening at port ` + (process.env.PORT || port));
+mongodb.initDb((err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    app.listen(port, () => {
+      console.log(`Database is connected and server running on port ${port}`);
+    });
+  }
 });
