@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 dotenv.config();
-const MongoClient = require('mongodb').MongoClient;
+const { MongoClient } = require('mongodb');
 
 let _db;
 
@@ -18,7 +18,7 @@ const initDb = (callback) => {
 
   console.log('Connecting to MongoDB with URI:', uri);
 
-  MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  MongoClient.connect(uri, { tls: true })
     .then((client) => {
       _db = client;
       callback(null, _db);
