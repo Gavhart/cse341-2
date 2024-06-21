@@ -1,37 +1,20 @@
 const express = require("express");
 const dotenv = require('dotenv');
-const swaggerJsdoc = require('swagger-jsdoc');
-const swaggerUi = require('swagger-ui-express');
-
 dotenv.config();
 
-const mongodb = require("./data/connect");
+const mongodb = require("./data/database");
 const app = express();
 
 const port = process.env.PORT || 8080;
 
 app.use(express.json());  // Ensure body parsing middleware is used
+
+// Root route
+app.get('/', (req, res) => {
+    res.send('Welcome to the Contact Management API');
+});
+
 app.use("/", require("./routes"));
-
-const swaggerOptions = {
-  swaggerDefinition: {
-    openapi: '3.0.0',
-    info: {
-      title: 'Contact Management API',
-      version: '1.0.0',
-      description: 'API for managing contacts',
-    },
-    servers: [
-      {
-        url: `http://localhost:${port}`,
-      },
-    ],
-  },
-  apis: ['./routes/*.js'],
-};
-
-const swaggerDocs = swaggerJsdoc(swaggerOptions);
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 mongodb.initDb((err) => {
   if (err) {
