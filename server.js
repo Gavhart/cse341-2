@@ -2,7 +2,7 @@ const express = require("express");
 const dotenv = require('dotenv');
 dotenv.config();
 
-const mongodb = require("./data/connect.js");
+const mongodb = require("./data/database");
 const app = express();
 
 const port = process.env.PORT || 8080;
