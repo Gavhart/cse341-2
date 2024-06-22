@@ -24,10 +24,10 @@ Content-Type: application/json
 
 {
     "_id": "666cde87de5600Test6bb1",
-    "firstName": "Test",
-    "lastName": "Test",
+    "firstName": "Joe",
+    "lastName": "Dirty",
     "email": "test@gmail.com",
-    "favoriteColor": "test-color",
+    "favoriteColor": "blue",
     "birthday": "January 1, 2000"
 }
 
@@ -36,11 +36,11 @@ POST http://localhost:8080/contacts/ HTTP/1.1
 Content-Type: application/json
 
 {
-    "_id": "666cde87de5600Test6bb1",
-    "firstName": "Test",
-    "lastName": "Test",
+    "_id": "666cde87de5600Test6bb4",
+    "firstName": "james",
+    "lastName": "Lexy",
     "email": "test@gmail.com",
-    "favoriteColor": "test-color",
+    "favoriteColor": "silver",
     "birthday": "January 1, 2000"
 }
 
@@ -52,20 +52,20 @@ PUT https://cse341-2-hovd.onrender.com/contacts/667606ddcf9c9b4bdaac4cc8 HTTP/1.
 Content-Type: application/json
 
 {
-    "firstName": "Test",
-    "lastName": "Test",
+    "firstName": "James",
+    "lastName": "Bond",
     "email": "test@update.com",
     "favoriteColor": "white",
     "birthday": "January 1, 2000"
 }
 
 ### Local Host
-PUT http://localhost:8080/contacts/667606ddcf9c9b4bdaac4cc8 HTTP/1.1
+PUT http://localhost:8080/contacts/666cde87de5600Test6bb1 HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "Test",
-    "lastName": "Test",
+    "firstName": "cindy",
+    "lastName": "loo",
     "email": "test@update.com",
     "favoriteColor": "white",
     "birthday": "January 1, 2000"
@@ -79,4 +79,4 @@ Content-Type: application/json
 DELETE https://cse341-2-hovd.onrender.com/contacts/667606ddcf9c9b4bdaac4cc8
 
 ### Local Host
-DELETE https://cse341-2-hovd.onrender.com/contacts/667606ddcf9c9b4bdaac4cc8
+DELETE https://localhost:8080/contacts/666cde87de5600Test6bb1
