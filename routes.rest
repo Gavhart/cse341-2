@@ -1,82 +1,75 @@
-//**********************GET ALL************************
+### ----> Local <---- ###
 
-//COURSES
-### Render
+### Get All Local.
+GET http://localhost:3000/contacts
+
+
+### Get Singles
+GET http://localhost:3000/contacts/6676607548a988aded040a78
+
+
+### Create Contact Local
+POST http://localhost:3000/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Austin",
+    "lastName": "Campbell",
+    "email": "cam23021@byui.edu",
+    "favoriteColor": "Lilac",
+    "birthday": "05/18/1997"
+}
+
+
+### Update Contact Local
+PUT http://localhost:3000/contacts/6676607648a988aded040a7a HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Bill",
+    "lastName": "Gates",
+    "email": "billgates@test.com",
+    "favoriteColor": "Yellow",
+    "birthday": "10/28/1955"
+}
+
+### Delete Contact Local
+DELETE http://localhost:3000/contacts/6676607448a988aded040a77 HTTP/1.1
+
+
+
+### ----> Production <---- ###
+
+### Get All
 GET https://cse341-2-hovd.onrender.com/contacts
 
-### Local Host
-GET http://localhost:8080/contacts
+### Get Single
+GET https://cse341-2-hovd.onrender.com/contacts/650c5812c06bc031e32200a1
 
-//**********************GET ONE************************
-//COURSE
-### Render
-GET https://cse341-2-hovd.onrender.com/contacts/666cde87de5600aacca96bb1
-
-### Local Host
-GET http://localhost:8080/contacts/666cde87de5600aacca96bb1
-
-//*******************POST***************************
-
-// CREATE USER
-### Render
-POST https://cse341-2-hovd.onrender.com/contacts/ HTTP/1.1
+### Create Prod Contact
+POST https://cse341-2-hovd.onrender.com/contacts HTTP/1.1
 Content-Type: application/json
 
 {
-    "_id": "666cde87de5600Test6bb1",
-    "firstName": "Joe",
-    "lastName": "Dirty",
-    "email": "test@gmail.com",
-    "favoriteColor": "blue",
-    "birthday": "January 1, 2000"
+    "firstName": "Austin",
+    "lastName": "Campbell",
+    "email": "cam23021@byui.edu",
+    "favoriteColor": "Lilac",
+    "birthday": "05/18/1997"
 }
 
-### Local Host
-POST http://localhost:8080/contacts/ HTTP/1.1
+
+### Update Contact production
+PUT https://cse341-2-hovd.onrender.com/contacts/650c5812c06bc031e32200a1 HTTP/1.1
 Content-Type: application/json
 
 {
-    "_id": "666cde87de5600Test6bb4",
-    "firstName": "james",
-    "lastName": "Lexy",
-    "email": "test@gmail.com",
-    "favoriteColor": "silver",
-    "birthday": "January 1, 2000"
+    "firstName": "Bill",
+    "lastName": "Gates",
+    "email": "billgates@test.com",
+    "favoriteColor": "Yellow",
+    "birthday": "10/28/1955"
 }
 
-//******************UPDATE/PUT****************************
-
-// UPDATE USER
-### Render
-PUT https://cse341-2-hovd.onrender.com/contacts/667606ddcf9c9b4bdaac4cc8 HTTP/1.1
-Content-Type: application/json
-
-{
-    "firstName": "James",
-    "lastName": "Bond",
-    "email": "test@update.com",
-    "favoriteColor": "white",
-    "birthday": "January 1, 2000"
-}
-
-### Local Host
-PUT http://localhost:8080/contacts/666cde87de5600Test6bb1 HTTP/1.1
-Content-Type: application/json
-
-{
-    "firstName": "james",
-    "lastName": "loo",
-    "email": "test@update.com",
-    "favoriteColor": "white",
-    "birthday": "January 1, 2000"
-}
-
-
-//******************DELETE****************************
-
-// DELETE USER
-### Render
-DELETE https://cse341-2-hovd.onrender.com/contacts/667606ddcf9c9b4bdaac4cc8
-
-### Local Host
-DELETE https://localhost:8080/contacts/666cde87de5600Test6bb1
+### Delete Contact Production
+DELETE https://cse341-2-hovd.onrender.com/contacts/663662dcac815af0fb1d50e4 HTTP/1.1

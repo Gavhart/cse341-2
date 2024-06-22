@@ -5,7 +5,7 @@ const doc = {
         title: "API Documentation",
         description: "This is a simple API documentation made with Swagger",
     },
-    host: "localhost:8080",
+    host: "localhost:3000",
     schemes: ['http', 'https'],
 };
 
