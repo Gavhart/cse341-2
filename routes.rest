@@ -1,82 +1,38 @@
-// LOCALHOST
-###
+// LOCAL
+### GET all contacts
 GET http://localhost:8080/contacts
-###
-GET http://localhost:8080/contacts/65162d9fb6b4cb34b80d8f6c
-###
-GET http://localhost:8080/contacts/65162d9fb6b4cb34b80d8f6d
-###
-GET http://localhost:8080/contacts/65162d9fb6b4cb34b80d8f6e
 
-###
-POST http://localhost:8080/contacts HTTP/1.1
-Content-Type: application/json
+### GET specific contact
+GET http://localhost:8080/contacts/6670a2f8f0b37ceca5fcef0d
+
+
+// PRODUCTION
+### GET all contacts
+GET https://cse341-contacts-gm00.onrender.com/contacts
+
+### GET specific contact
+GET https://cse341-contacts-gm00.onrender.com/contacts/6670a2f8f0b37ceca5fcef0d
+
 
 {
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "hoot@gmail.com"
+    "_id":"6670a2f8f0b37ceca5fcef0d","firstName":"Lynne","lastName":"Hathaway","email":"lj@hathaway.net","favoriteColor":"Purple","birthday":"6/6/1966"
 }
 
-### PUT contact
-PUT http://localhost:8080/contacts/6220bcb39cd507e920c75a0b HTTP/1.1
-content-type: application/json
+### Update contact (PUT) PUT http://localhost:3000/contacts/6670a374f0b37ceca5fcef0f Content-Type: application/json 
+ {
+    "_id":"6670a374f0b37ceca5fcef0f","firstName":"Alisha","lastName":"Hathaway","email":"aj@hathaway.net","favoriteColor":"Green","birthday":"6/6/1996"
+    }
+
+### Delete Contact DELETE http://localhost:8080/contacts/6670a41bf0b37ceca5fcef12
 
 {
-    "firstName":"Sarah",
-    "lastName":"Birch",
-    "email":"test@gmail.com",
-    "favoriteColor":"Green",
-    "birthday":"12/12/20"
+"firstName": "Kyrra", "lastName": "Hathaway", "email": "kl@hathaway.net", "favoriteColor": "Green", "birthday": "4/4/1999"
 }
-### DELETE contact
-DELETE http://localhost:8080/contacts/6220b775099269ff7b31ceab HTTP/1.1
 
-// PRODUCTION Deploy
-### Get all contacts
-GET https://cse341-instructor.herokuapp.com/contacts
-
-
-### Get contact by id
-GET https://cse341-instructor.herokuapp.com/contacts/65162d9fb6b4cb34b80d8f6e
-
-
-### Create contact
-POST https://cse341-instructor.herokuapp.com/contacts HTTP/1.1
-content-type: application/json
+### Change contact information (PUT) PUT https://cse341-2-hovd.onrender.com/contacts/6670a374f0b37ceca5fcef0f Content-Type: application/json
 
 {
-    "firstName":"Ashley",
-    "lastName":"Weaver",
-    "email":"aWeaver@test.com",
-    "favoriteColor":"Brown",
-    "birthday":"06/19/2000"
+"firstName": "Kyrralynne", "lastName": "Hathaway", "email": "kl@hathaway.net", "favoriteColor": "Green", "birthday": "4/4/1994"
 }
 
-
-### PUT contact
-PUT https://cse341-instructor.herokuapp.com/contacts/6220bcb39cd507e920c75a0b HTTP/1.1
-content-type: application/json
-
-{
-    "firstName":"Sarah",
-    "lastName":"Birch",
-    "email":"sarahB@gmail.com",
-    "favoriteColor":"Yellow",
-    "birthday":"06/12/20"
-}
-
-
-### DELETE contact
-DELETE https://cse341-instructor.herokuapp.com/contacts/6220e34083149913680f9a64 HTTP/1.1
-
-// PRODUCTION Deploy
-###
-GET https://cse341-contacts-7a81.onrender.com/contacts
-###
-GET https://cse341-contacts-7a81.onrender.com/contacts/65162d9fb6b4cb34b80d8f6c
-###
-GET https://cse341-contacts-7a81.onrender.com/contacts/65162d9fb6b4cb34b80d8f6d
-###
-GET https://cse341-contacts-7a81.onrender.com/contacts/65162d9fb6b4cb34b80d8f6e
-
+### Remove a contact (DELETE) DELETE https://cse341-2-hovd.onrender.com/contacts/contacts/6670a41bf0b37ceca5fcef12

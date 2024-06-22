@@ -6,6 +6,8 @@ const getAll = async (req, res) => {
     result.toArray().then((contacts) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(contacts);
+    }).catch(err => {
+        res.status(500).json({ error: 'An error occurred while fetching contacts' });
     });
 };
 
@@ -15,6 +17,8 @@ const getSingle = async (req, res) => {
     result.toArray().then((contacts) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(contacts[0]);
+    }).catch(err => {
+        res.status(500).json({ error: 'An error occurred while fetching the contact' });
     });
 };
 
